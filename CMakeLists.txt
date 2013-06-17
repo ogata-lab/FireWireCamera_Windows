@@ -59,7 +59,7 @@ endif(${OpenRTM_FOUND})
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/WinModules)
 find_package(1394FlyCapture REQUIRED)
-find_package( OpenCV 2 REQUIRED )
+find_package(OpenCV REQUIRED)
 
 set(1394FlyCapture_LIB PGRFlyCapture pgrflycapturegui)
 
