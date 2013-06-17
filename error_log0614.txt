@@ -1,1 +1,0 @@
-エラー30error MSB6001: "CL.exe" のコマンド ライン スイッチが無効です。値 [C:\Program Files\OpenRTM-aist\1.1\"] には二重引用符文字が奇数個含まれています。コマンド ライン ツールでは、リテラルの二重引用符文字を偶数個使用する必要があります。	C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Platforms\Win32\Microsoft.Cpp.Win32.Targets	147

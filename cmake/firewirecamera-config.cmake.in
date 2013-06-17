@@ -1,0 +1,54 @@
+# FireWireCamera CMake config file
+#
+# This file sets the following variables:
+# FireWireCamera_FOUND - Always TRUE.
+# FireWireCamera_INCLUDE_DIRS - Directories containing the FireWireCamera include files.
+# FireWireCamera_IDL_DIRS - Directories containing the FireWireCamera IDL files.
+# FireWireCamera_LIBRARIES - Libraries needed to use FireWireCamera.
+# FireWireCamera_DEFINITIONS - Compiler flags for FireWireCamera.
+# FireWireCamera_VERSION - The version of FireWireCamera found.
+# FireWireCamera_VERSION_MAJOR - The major version of FireWireCamera found.
+# FireWireCamera_VERSION_MINOR - The minor version of FireWireCamera found.
+# FireWireCamera_VERSION_REVISION - The revision version of FireWireCamera found.
+# FireWireCamera_VERSION_CANDIDATE - The candidate version of FireWireCamera found.
+
+message(STATUS "Found FireWireCamera-@PROJECT_VERSION@")
+set(FireWireCamera_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(FireWireCamera_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(FireWireCamera_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(FireWireCamera_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(FireWireCamera_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(FireWireCamera_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(FireWireCamera_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(FireWireCamera_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(FireWireCamera_VERSION @PROJECT_VERSION@)
+set(FireWireCamera_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(FireWireCamera_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(FireWireCamera_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(FireWireCamera_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
