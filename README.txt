@@ -14,6 +14,16 @@
 #   --outport=CameraImage:Img::TimedCameraImage 
 
 
+!!!CAUTION
+This component depends on ....
+
+ - OpenCV2
+ - PGR FlyCapture Library (x86)
+ 
+ You can install PGR software from CD-ROM which is attached with Point Gray Cameras, 
+ but you MUST select the option to install 32bit library.
+
+
 ======================================================================
     Basic Information
 ======================================================================
