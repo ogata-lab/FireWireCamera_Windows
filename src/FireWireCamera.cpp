@@ -215,7 +215,7 @@ RTC::ReturnCode_t FireWireCamera::onExecute(RTC::UniqueId ec_id)
 
     // copy distortion coefficient to Data Port
     for(int j = 0; j < 5; ++j)
-      m_CameraImage.data.intrinsic.distortion_coefficient[j] = cam_param.distCoeffs.at<double>(0, j);
+      m_CameraImage.data.intrinsic.distortion_coefficient[j] = cam_param.distCoeffs.at<double>(j, 0);
 
 	//set time stamp
 	m_CameraImage.tm = UTIL::getCurrentTimeStamp();
